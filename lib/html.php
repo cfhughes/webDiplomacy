@@ -341,14 +341,28 @@ class libHTML
 	 */
 	static public function notice($title, $message)
 	{
-		ob_clean();
 
-		libHTML::starthtml($title);
+		if (defined('AJAX')){
 
-		print '<div class="content-notice"><p>'.$message.'</p></div>';
+		    $result['title'] = $title;
+		    $result['message'] = $message;
 
-		print '</div>';
-		libHTML::footer();
+            echo json_encode($result);
+
+            close();
+
+        }else {
+
+            ob_clean();
+
+            libHTML::starthtml($title);
+
+            print '<div class="content-notice"><p>' . $message . '</p></div>';
+
+            print '</div>';
+            libHTML::footer();
+
+        }
 	}
 
 	/**

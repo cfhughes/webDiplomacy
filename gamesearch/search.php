@@ -149,6 +149,27 @@ class search
 
 		return $count;
 	}
+
+    public function printGamesListJSON()
+    {
+        global $DB;
+
+        $SQL = $this->sql();
+        //$this->devQueryData($SQL);
+
+        $tabl = $DB->sql_tabl($SQL);
+
+        $array_for_json = array();
+
+        $count=0;
+        while( $row = $DB->tabl_hash($tabl) )
+        {
+            $array_for_json[] = $row;
+        }
+        print json_encode($array_for_json);
+
+        return $count;
+    }
 }
 
 ?>
