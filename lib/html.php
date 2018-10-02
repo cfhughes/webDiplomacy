@@ -412,6 +412,9 @@ class libHTML
 		<link rel="stylesheet" id="global-css" href="'.CSSDIR.l_s('/global.css').'" type="text/css" />
 		<link rel="stylesheet" id="game-panel-css" href="'.CSSDIR.l_s('/gamepanel.css').'" type="text/css" />
 		<link rel="stylesheet" id="home-css" href="'.CSSDIR.l_s('/home.css').'" type="text/css" />
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 		'.$variantCSS.'
 		<script type="text/javascript" src="useroptions.php"></script>
 		<script type="text/javascript" src="'.STATICSRV.l_j('contrib/js/prototype.js').'"></script>
@@ -461,6 +464,8 @@ class libHTML
 			<div id="FB_HiddenIFrameContainer" style="display:none; position:absolute; left:-100px; top:-100px; width:0px; height: 0px;"></div>
 			<?php
 		}
+
+		print '<div class="container">';
 
 		print '<noscript><div class="content-notice">
 					<p class="notice">'.l_t('You do not have JavaScript enabled. It is required to use webDiplomacy fully.').'</p>
@@ -699,7 +704,7 @@ class libHTML
 		global $User;
 
 	 	$menu = '<!-- Menu begin. -->
-                    <nav class="navbar navbar-expand-md navbar-dark <!--fixed-top bg-light--> ">
+                    <nav class="navbar navbar-expand-md navbar-light bg-light <!--fixed-top bg-light--> ">
                       <a class="navbar-brand" href="./"><img id="logo" src="'.l_s('images/logo.png').'" alt="'.l_t('webDiplomacy').'" /></a>
                       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -719,24 +724,11 @@ class libHTML
 			else
 				$arguments = '';
 
-			/*$menu .= '
-				<div>
-					<div id="header-welcome">
-						'.(is_object($User)?l_t('Welcome, %s',$User->profile_link(TRUE)).' -
-						<span class="logon">('.
-							($User->type['User'] ?
-							'<a href="logon.php?logoff=on" class="light">'.l_t('Log off').'</a>)'.
-								( defined('AdminUserSwitch') ? ' (<a href="index.php?auid=0" class="light">'.l_t('Switch back').'</a>)' : '' )
-							:'<a href="logon.php" class="light">'.l_t('Log on').'</a>)').
-						'</span>'
-						:l_t('Welcome, Guest')).'
-					</div>';*/
-
 			//$menu .= '<div id="header-goto">';
 
 			if( isset($pages[$scriptname]) and ! $pages[$scriptname]['inmenu'] )
 			{
-				$menu .= '<li class="nav-item"><a href="'.$scriptname.'?'.$arguments.'" title="'.l_t('The current page; click to refresh').'" class="current nav-link text-dark">'
+				$menu .= '<li class="nav-item"><a href="'.$scriptname.'?'.$arguments.'" title="'.l_t('The current page; click to refresh').'" class="active p-2 text-dark">'
 					.l_t($pages[$scriptname]['name']).'</a></li>';
 			}
 
@@ -745,7 +737,7 @@ class libHTML
 				if($script['inmenu'])
 				{
 					$menu .= '<li class="nav-item"><a href="'.$page.
-						( $page==$scriptname ? '?'.$arguments.'" class="nav-link text-dark active"' : '" class="nav-link text-dark"').' '.
+						( $page==$scriptname ? '?'.$arguments.'" class="p-2 text-dark active"' : '" class="p-2 text-dark"').' '.
 						( isset($script['title']) ? 'title="'.l_t($script['title']).'"' :'').' '.
 						'>'.
 						l_t($script['name']).'</a></li>';
@@ -753,8 +745,25 @@ class libHTML
 			}
 
 			$menu .= '</ul>
-                      </div>
-                    </nav>';
+                      </div>';
+            $menu .= '
+				<!--<div>-->
+				<span class="navbar-text">
+    
+					<div id="header-welcome">
+						'.(is_object($User)?l_t('Welcome, %s',$User->profile_link(TRUE)).' -
+						<span class="logon">('.
+                    ($User->type['User'] ?
+                        '<a href="logon.php?logoff=on" class="light">'.l_t('Log off').'</a>)'.
+                        ( defined('AdminUserSwitch') ? ' (<a href="index.php?auid=0" class="light">'.l_t('Switch back').'</a>)' : '' )
+                        :'<a href="logon.php" class="light">'.l_t('Log on').'</a>)').
+                    '</span>'
+                    :l_t('Welcome, Guest')).'
+					</div>
+					</span>';
+
+            $menu .= '</nav>';
+
 			//$menu .= '</div></div>';
 		}
 		else
@@ -767,8 +776,8 @@ class libHTML
 		}
 		$menu .= '<!--</div>-->
 		<!--</div>-->
-		<div id="seperator"></div>
-		<div id="seperator-fixed"></div>
+		<!--<div id="seperator"></div>
+		<div id="seperator-fixed"></div>-->
 		<!-- Menu end. -->';
 
 		return $menu;
@@ -809,7 +818,7 @@ class libHTML
 			print self::footerCopyright();
 		}
 
-		print '</div></body></html>';
+		print '</div></div></body></html>';
 
 		close();
 	}
