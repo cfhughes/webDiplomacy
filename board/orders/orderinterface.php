@@ -286,6 +286,10 @@ class OrderInterface
 	';
 	}
 
+	public function JSONorders() {
+		return json_encode($this->Orders);
+	}
+
 	protected function jsLoadBoard() {
 		libHTML::$footerIncludes[] = l_j('board/model.js');
 		libHTML::$footerIncludes[] = l_j('board/load.js');
