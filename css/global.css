@@ -247,7 +247,7 @@ p.lightgrey {
 }
 a {
 	font-weight: bold;
-	text-decoration:underline;
+	/*text-decoration:underline;*/
 }
 a:link {
 	color: #006699;
@@ -289,13 +289,13 @@ a.light {
 	margin-bottom:0;
 	max-width: 800px;
 }
-#logo {
+/*#logo {
 	padding:0;
 	margin:0;
 	position:absolute;
 	vertical-align:middle;
 	border: 0;				
-}
+}*/
 #header-welcome {
 	padding:0;
 	margin:0;

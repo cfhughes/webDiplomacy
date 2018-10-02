@@ -408,6 +408,7 @@ class libHTML
 		<meta name="keywords" content="'.l_t('diplomacy,diplomacy game,online diplomacy,classic diplomacy,web diplomacy,diplomacy board game,play diplomacy,php diplomacy').'" />
 		<link rel="shortcut icon" href="'.STATICSRV.l_s('favicon.ico').'" />
 		<link rel="icon" href="'.STATICSRV.l_s('favicon.ico').'" />
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<link rel="stylesheet" id="global-css" href="'.CSSDIR.l_s('/global.css').'" type="text/css" />
 		<link rel="stylesheet" id="game-panel-css" href="'.CSSDIR.l_s('/gamepanel.css').'" type="text/css" />
 		<link rel="stylesheet" id="home-css" href="'.CSSDIR.l_s('/home.css').'" type="text/css" />
@@ -698,11 +699,18 @@ class libHTML
 		global $User;
 
 	 	$menu = '<!-- Menu begin. -->
-				<div id="header">
-					<div id="header-container">
-						<a href="./">
-							<img id="logo" src="'.l_s('images/logo.png').'" alt="'.l_t('webDiplomacy').'" />
-						</a>';
+                    <nav class="navbar navbar-expand-md navbar-dark <!--fixed-top bg-light--> ">
+                      <a class="navbar-brand" href="./"><img id="logo" src="'.l_s('images/logo.png').'" alt="'.l_t('webDiplomacy').'" /></a>
+                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav mr-auto">
+                          
+                     
+				<!--<div id="header">
+					<div id="header-container">-->
+						';
 
 		if ( is_object( $User ) )
 		{
@@ -711,7 +719,7 @@ class libHTML
 			else
 				$arguments = '';
 
-			$menu .= '
+			/*$menu .= '
 				<div>
 					<div id="header-welcome">
 						'.(is_object($User)?l_t('Welcome, %s',$User->profile_link(TRUE)).' -
@@ -722,29 +730,32 @@ class libHTML
 							:'<a href="logon.php" class="light">'.l_t('Log on').'</a>)').
 						'</span>'
 						:l_t('Welcome, Guest')).'
-					</div>';
+					</div>';*/
 
-			$menu .= '<div id="header-goto">';
+			//$menu .= '<div id="header-goto">';
 
 			if( isset($pages[$scriptname]) and ! $pages[$scriptname]['inmenu'] )
 			{
-				$menu .= '<a href="'.$scriptname.'?'.$arguments.'" title="'.l_t('The current page; click to refresh').'" class="current">'
-					.l_t($pages[$scriptname]['name']).'</a>';
+				$menu .= '<li class="nav-item"><a href="'.$scriptname.'?'.$arguments.'" title="'.l_t('The current page; click to refresh').'" class="current nav-link text-dark">'
+					.l_t($pages[$scriptname]['name']).'</a></li>';
 			}
 
 			foreach($pages as $page=>$script)
 			{
 				if($script['inmenu'])
 				{
-					$menu .= '<a href="'.$page.
-						( $page==$scriptname ? '?'.$arguments.'" class="current"' : '"').' '.
+					$menu .= '<li class="nav-item"><a href="'.$page.
+						( $page==$scriptname ? '?'.$arguments.'" class="nav-link text-dark active"' : '" class="nav-link text-dark"').' '.
 						( isset($script['title']) ? 'title="'.l_t($script['title']).'"' :'').' '.
 						'>'.
-						l_t($script['name']).'</a>';
+						l_t($script['name']).'</a></li>';
 				}
 			}
 
-			$menu .= '</div></div>';
+			$menu .= '</ul>
+                      </div>
+                    </nav>';
+			//$menu .= '</div></div>';
 		}
 		else
 		{
@@ -754,8 +765,8 @@ class libHTML
 					<a href="'.$scriptname.'">'.l_t('Reload current page').'</a>
 				</div>';
 		}
-		$menu .= '</div>
-		</div>
+		$menu .= '<!--</div>-->
+		<!--</div>-->
 		<div id="seperator"></div>
 		<div id="seperator-fixed"></div>
 		<!-- Menu end. -->';
