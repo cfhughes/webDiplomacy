@@ -328,7 +328,7 @@ class OrderInterface
 		$html = $this->jsHTML();
 
 		$html .= '
-	<form id="orderFormElement" onsubmit="return false;">
+	<form id="orderFormElement" onsubmit="return false;" class="form-inline">
 		<a name="orders"></a><table class="orders">';
 
 		$alternate = false;
@@ -337,19 +337,19 @@ class OrderInterface
 			$alternate = ! $alternate;
 			$html .= '<tr class="barAlt'.($alternate ? '1' : '2').'">
 				<td class="uniticon"><span id="orderID'.$Order->id.'UnitIconArea"></span></td>
-				<td class="order"><div id="orderID'.$Order->id.'">'.l_t('Loading order').'...</div></td>
+				<td class="order"><div style="form-row" id="orderID'.$Order->id.'">'.l_t('Loading order').'...</div></td>
 				</tr>';
 		}
 
 		$html .= "</table>".'
-				<div style="text-align:center;"><span id="ordersNoticeArea'.$this->memberID.'"></span>
+				<div class="form-row"><div class="col-md"><span id="ordersNoticeArea'.$this->memberID.'"></span>
 				'.
 				($Game->pressType == 'RulebookPress' && $Game->phase != 'Diplomacy' ? ''  : 
-			'<input id="UpdateButton'.$this->memberID.'" type="Submit" class="form-submit spaced-button" name="'.
+			'<input id="UpdateButton'.$this->memberID.'" type="Submit" class="form-submit spaced-button btn btn-primary" name="'.
 				l_t('Update').'" value="'.l_t('Save').'" disabled />' ) .'
-			<input id="FinalizeButton'.$this->memberID.'" type="Submit" class="form-submit spaced-button" name="'.
+			<input id="FinalizeButton'.$this->memberID.'" type="Submit" class="form-submit spaced-button btn btn-primary" name="'.
 				l_t($this->orderStatus->Ready?'Not ready':'Ready').'" value="'.l_t($this->orderStatus->Ready?'Not ready':'Ready').'" disabled />
-		</div>
+		</div></div>
 	</form>';
 
 		return $html;

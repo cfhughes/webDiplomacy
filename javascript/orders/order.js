@@ -347,7 +347,7 @@ function Order(orderData)
 		{
 			var isDisabled=(options.values().length == 1);
 				
-			var html=' <select orderType="'+name+'" class="orderDropDown '+(isDisabled?' orderDisabled':'')+'" name="'+
+			var html=' <select orderType="'+name+'" class="form-control orderDropDown '+(isDisabled?' orderDisabled':'')+'" name="'+
 				elementName+'" style="background-color:#ffd4c9" '+(isDisabled?' disabled':'')+' >';
 			
 			if( !Object.isUndefined(value) && value != '' )

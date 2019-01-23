@@ -44,9 +44,9 @@ span.points {
 }
 input[type="text"], input[type="submit"], input[type="password"], textarea, select {
 	font-size: 14px;
-	background-color: #eaffea;
-	border: 1px solid #c1c1c1;
-	color:#009902;
+	/*background-color: #eaffea;*/
+	/*border: 1px solid #c1c1c1;*/
+	/*color:#009902;*/
 }
 textarea {
 	font-size: 16px ! important; 
@@ -56,7 +56,7 @@ textarea {
 div.hr, div.hrthin {
 	height:0;
 	border: 0;
-	border-bottom: 1px solid #aaa;
+	/*border-bottom: 1px solid #aaa;*/
 	margin-top:10px;
 	margin-bottom:10px;
 	width:80%;
@@ -75,7 +75,7 @@ div.clear {
 	border-bottom: 0;
 }
 h1, h2, h3, h4 {
-	color: #009902;
+	/*color: #009902;*/
 	margin-bottom:5px;
 }
 h3 {
@@ -99,7 +99,7 @@ h2.black {
 }
 span.gamename {
 	font-size:15px;
-	color: #009902;
+	/*color: #009902;*/
 	font-weight:bold;
 }
 ul.gamemain {
@@ -118,7 +118,7 @@ div.rightHalf {
 	width:50%;
 	padding-top:0;
 	margin-bottom:0;
-	border-left:1px solid #aaa;
+	/*border-left:1px solid #aaa;*/
 	padding-left:10px
 }
 div.leftHalf {
@@ -150,7 +150,7 @@ li.formlisttitle {
 
 .form-submit {
 	font-weight: bold ! important;
-	color: #006699 ! important;
+	/*color: #006699 ! important;*/
 }
 li.formlistfield {
 	list-style: none;
@@ -165,7 +165,7 @@ li.formlistdesc {
 	list-style: none;
 	margin-left:20px;
 	margin-right:20px;
-	border-left: 1px solid #aaa;
+	/*border-left: 1px solid #aaa;*/
 	padding-left: 10px;
 	margin-bottom: 30px;
 }
@@ -210,9 +210,9 @@ strong.description {
 	margin-left:40px;
 }
 p.notice {
-	font-weight: bold;
+/*	font-weight: bold;
 	text-align: center;
-	margin:0px;
+	margin:0px;*/
 }
 p.welcome {
 	margin-left: 20px;
@@ -250,16 +250,16 @@ a {
 	/*text-decoration:underline;*/
 }
 a:link {
-	color: #006699;
+	/*color: #006699;*/
 }
 a:visited {
-	color: #006699;
+	/*color: #006699;*/
 }
 a:active {
-	color: #006699;
+	/*color: #006699;*/
 }
 a:hover {
-	color: #009902 ! important;
+	/*color: #009902 ! important;*/
 }
 a.light {
 	font-weight:normal;
@@ -320,13 +320,13 @@ a.light {
 	color:#000;
 }
 #header-goto a.current:hover {
-	color:#009902;
+	/*color:#009902;*/
 }
 #seperator {
 	margin: 0;
 	padding: 0;
 	width: auto;
-	background-color: #006699;
+	/*background-color: #006699;*/
 	font-size: 0;
 	height: 5px;
 	border-top: 1px solid #000;
@@ -340,7 +340,7 @@ a.light {
 	margin: 0;
 	padding: 0;
 	max-width: 800px;
-	background-color: #006699;
+	/*background-color: #006699;*/
 	font-size: 0;
 	height: 5px;
 	border-top: 1px solid #000;
@@ -377,8 +377,8 @@ div.content-notice {
 	
 }
 div.content-board-header, div.content-home-header {
-	margin-top:6px;
-	border-bottom:0;
+/*	margin-top:6px;
+	border-bottom:0;*/
 	}
 div.content-board-header {
 	/*border: 1px solid #aaa;
@@ -403,7 +403,7 @@ div.content-home-updates {
 	max-width: 750px;
 	padding-left: 24px;
 	padding-right: 24px;
-	border: 1px solid #aaa;
+	/*border: 1px solid #aaa;*/
 	}
 .content-slot {
 	border-top:0;
@@ -443,7 +443,7 @@ div.gamelistings-tabs {
 	border:0;
 	text-align:center;
 	font-size: 13px;
-	border-bottom:1px solid #aaa;
+	/*border-bottom:1px solid #aaa;*/
 	
 }
 div.gamelistings-tabs a.current {
@@ -473,11 +473,11 @@ div.gamelistings-tabs a {
 	padding-bottom:3px;
 	border:0;
 	background-color: #fafafa;	
-	border-top:1px solid #aaa;
+	/*border-top:1px solid #aaa;
 	border-left:1px solid #aaa;
-	border-right:1px solid #aaa;
+	border-right:1px solid #aaa;*/
 	
-	border-bottom:2px solid #006699 ! important;
+	/*border-bottom:2px solid #006699 ! important;*/
 }
 div#chatboxtabs a {
 	margin-left:2px;
@@ -545,13 +545,13 @@ div.gamelistings-tabs a:hover {
 	margin-left:5px;
 }
 .leftRule {
-	border-left: 1px solid #aaa;
+	/*border-left: 1px solid #aaa;*/
 }
 .bottomRule {
 }
 .message-subject {
 	font-size:15px;
-	color: #009902;
+	/*color: #009902;*/
 	overflow:hidden;
 }
 .message-body {
@@ -586,7 +586,7 @@ form {
 	padding-bottom:10px;
 }
 .reply-top {
-	border-top:1px solid #c1c1c1;
+	/*border-top:1px solid #c1c1c1;*/
 	margin-top:5px;
 }
 .content-game {
@@ -620,15 +620,15 @@ div.chatbox {
 	max-height: 180px;
 	overflow-x:hidden;
 	overflow-y:auto;
-	border-left: solid #c1c1c1 1px;
+	/*border-left: solid #c1c1c1 1px;
 	border-right: solid #c1c1c1 1px;
-	border-bottom: solid #c1c1c1 1px;
+	border-bottom: solid #c1c1c1 1px;*/
 }
 div.chatbox td {
 	overflow:hidden;
 }
 div.chatboxnotabs {
-	border-top:1px solid #aaa;
+	/*border-top:1px solid #aaa;*/
 	}
 .chatboxMembersList {
 	font-size:12px;
@@ -639,21 +639,21 @@ TABLE {
 	width:100%;
 }
 div.datc table {
-	border: solid #aaa 1px;
+	/*border: solid #aaa 1px;*/
 }
 div.datc th, .datc td {
-	border-right: solid #aaa 1px;
+	/*border-right: solid #aaa 1px;*/
 }
 div.datc th {
-	border-top: solid #aaa 1px;
+	/*border-top: solid #aaa 1px;*/
 	text-align:center;
 	text-decoration:underline;
-	border-bottom: solid #aaa 1px;
+	/*border-bottom: solid #aaa 1px;*/
 	padding: 3px 5px;
 	font-size:16px;
 }
 TABLE.credits {
-	border: solid #aaa 1px;
+	/*border: solid #aaa 1px;*/
 	width:85%;
 	margin-left:auto;
 	margin-right:auto;
@@ -686,10 +686,10 @@ td.send {
 TD.time {
 	vertical-align:bottom;
 	width:14% ! important;
-	border-right: solid #aaa 1px;
+	/*border-right: solid #aaa 1px;*/
 }
 TR.header {
-	border-bottom: solid #aaa 1px;
+	/*border-bottom: solid #aaa 1px;*/
 }
 TD.uniticon {
 	width:6%;

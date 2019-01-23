@@ -518,9 +518,9 @@ class libHTML
 				Config::$downtimeTriggerMinutes,libTime::text($Misc->LastProcessTime));
 
 		if ( $notice )
-			return '<div class="content-notice"><p class="notice">'.
-				implode('</p><div class="hr"></div><p class="notice">',$notice).
-				'</p></div>';
+			return '<div class="alert alert-dark" role="alert">'.
+				implode('</div><div class="alert alert-warning" role="alert">',$notice).
+				'</div>';
 		else
 			return '';
 	}
@@ -597,7 +597,7 @@ class libHTML
 				continue;
 
 			$gameNotifyBlock .= '<span class="variant'.Config::$variants[$notifyGame['variantID']].'">'.
-				'<a gameID="'.$gameID.'" class="country'.$notifyGame['countryID'].'" href="board.php?gameID='.$gameID.'">'.
+				'<a gameID="'.$gameID.'" class="country'.$notifyGame['countryID'].' btn btn-primary" href="board.php?gameID='.$gameID.'">'.
 				$notifyGame['name'];
 
 			if ( $notifyGame['processStatus'] == 'Paused' )
@@ -705,7 +705,7 @@ class libHTML
 
 	 	$menu = '<!-- Menu begin. -->
                     <nav class="navbar navbar-expand-md navbar-light bg-light <!--fixed-top bg-light--> ">
-                      <a class="navbar-brand" href="./"><img id="logo" src="'.l_s('images/logo.png').'" alt="'.l_t('webDiplomacy').'" /></a>
+                      <a class="navbar-brand mr-0 mr-md-2" href="./"><img id="logo" src="'.l_s('images/base-with-flag.png').'" alt="'.l_t('webDiplomacy').'" /></a>
                       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                       </button>
